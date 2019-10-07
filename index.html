@@ -1,0 +1,182 @@
+
+<html>
+<head>
+<title>Simple Calculator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="jquery.mobile-1.4.5.css">
+<script src="jquery.js"></script>
+<script src="jquery.mobile-1.4.5.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+</head>
+
+<body>
+<div data-role="page" id="home" data-theme="a">
+
+<div data-role="header">
+<h1>Simple Calculator</h1>
+</div>
+<div data-role="navbar">
+  <ul>
+     <li><a href="#home" data-icon="home">Home</a></li>
+     <li><a href="#calculator" data-icon="grid">Calculator</a></li>
+     <li><a href="#help" data-icon="info">Help</a></li>
+  </ul>
+  </div>
+<h4>This is a Jquery exercise which provides user with a calculator to perform mathematical operations</h4>
+
+</div>
+
+
+
+
+
+<div data-role="page" id="calculator" data-theme="a">
+
+<div data-role="header">
+<h1>Simple Calculator</h1>
+</div>
+<div data-role="navbar">
+  <ul>
+     <li><a href="#home" data-icon="home">Home</a></li>
+     <li><a href="#calculator" data-icon="grid">Calculator</a></li>
+     <li><a href="#help" data-icon="info">Help</a></li>
+  </ul>
+ </div>
+ 
+  <input type="text" id="num1">
+  
+  <form method="post" action="demoform.asp"> 
+  <fieldset class="ui-field-contain"> 
+  <select name="sign" id="sign"> 
+  <option value="+">+</option> 
+  <option value="-">-</option> 
+  <option value="*">*</option>
+  <option value="/">/</option>
+  </select>
+  </fieldset>
+  </form>
+
+  <input type="text" id="num2">
+  
+  <a href="#result" class="ui-btn" onclick="calculate()">Calculate</a>
+
+
+</div>
+
+
+
+
+<div data-role="page" id="result" data-theme="a">
+
+<div data-role="header">
+<h1>RESULTS</h1>
+</div>
+<div data-role="navbar">
+  <ul>
+     <li><a href="#home" data-icon="home">Home</a></li>
+     <li><a href="#calculator" data-icon="grid">Calculator</a></li>
+     <li><a href="#help" data-icon="info">Help</a></li>
+  </ul>
+  </div>
+
+<h5>Operation is:</h5>
+<p><h5 id="n1"></h5> <h5 id="si"></h5> <h5 id="n2"></h5></p>
+<h5>Result</h5>
+<h5 id="re"></h5>
+
+</div>
+
+
+
+
+
+
+
+
+<div data-role="page" id="help" data-theme="a">
+
+<div data-role="header">
+<h1>Simple Calculator</h1>
+</div>
+<div data-role="navbar">
+  <ul>
+     <li><a href="#home" data-icon="home">Home</a></li>
+     <li><a href="#calculator" data-icon="grid">Calculator</a></li>
+     <li><a href="#help" data-icon="info">Help</a></li>
+  </ul>
+  </div>
+
+
+<h4>This help section provides basic information on how to use the calculator</h4>
+
+<a href="#info" class="ui-btn ui-icon-info ui-btn-icon-left">More Info</a>
+</div>
+
+
+
+
+
+
+<div data-role="page" data-dialog="true" id="info" data-theme="a">
+<div data-role="header">
+<h1>More Info</h1>
+</div>
+
+<h3>You have requested more information about the app</h3>
+<br>
+<a href="#info" class="ui-btn ui-icon-arrowreturnthick-1-w ui-btn-icon-left" data-rel="back">Dismiss</a
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+function calculate(){
+var number1 =document.getElementById("num1").value; 
+var number2 =document.getElementById("num2").value;
+var s =document.getElementById("sign").value;
+
+
+
+   if (s=="+"){
+   var result = parseFloat(number1) + parseFloat(number2); 
+   }
+
+     else if (s=="-"){
+     var result = parseFloat(number1) - parseFloat(number2);
+     }
+
+       else if (s=="*"){
+       var result = parseFloat(number1) * parseFloat(number2);
+       }
+
+         else if (s=="/"){
+         var result = parseFloat(number1) / parseFloat(number2);
+         }
+
+document.getElementById("re").innerHTML = result ; 
+document.getElementById("n1").innerHTML = number1 ; 
+document.getElementById("n2").innerHTML = number2 ; 
+document.getElementById("si").innerHTML = s ; 
+
+}					  
+						   
+
+</script>
+
+</body>
+</html>
